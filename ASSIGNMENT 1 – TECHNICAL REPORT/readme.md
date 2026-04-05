@@ -1,25 +1,32 @@
 # SECP3843 – Special Topic in Data Engineering
 
-## 📘 Research Logbook – Technical Report
+# 📘 Research Logbook – Technical Report
 **Course:** SECP3843 – Special Topic in Data Engineering  
 **Topic:** Modern Data Engineering Architecture  
-**Members:** * Choh Jing Yi (A23CS0296)
-* Tan Zhiming (A23CS0189) 
+**Members:** Choh Jing Yi (A23CS0296)
 
 ## 📋 Logbook / Process Record
 
 | Date | Activity / Progress | Keywords / Prompts Used | References / Sources | Verification / Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| **2026-03-23** | **Initial Research & Outline:** Selected "Data Engineering Ecosystem" as the core topic and defined the structure focusing on the Modern Data Stack (MDS). | "Data engineering ecosystem components", "Modern data architecture evolution" | [cite_start]Kleppmann (2017), GeeksforGeeks [cite: 235, 238] | [cite_start]Established the five required chapters: Intro, Background, Analysis, Recommendations, and Conclusion. [cite: 39-45, 78-97] |
-| **2026-03-30** | **Literature Review:** Analyzed the shift from traditional ETL to modern ELT and the emergence of the Data Lakehouse paradigm. | "ETL vs ELT cloud architecture", "Data Lakehouse paradigm benefits" | Armbrust et al. (2021)[cite_start], Inmon & Linstedt (2014) [cite: 241, 244] | [cite_start]Cross-referenced academic papers to ensure technological definitions were accurate for the UTM assignment. [cite: 63, 85] |
-| **2026-04-03** | **Analysis & Discussion:** Developed the case study for a scalable student talent verification platform and finalized technical diagrams. | "Cloud-based talent platform data architecture", "Data engineering orchestration tools" | [cite_start]Reis & Housley (2022) [cite: 245] | [cite_start]Created Figure 1 and Figure 2 to visualize the end-to-end data lifecycle. [cite: 176, 215] |
-| **2026-04-05** | **Drafting Recommendations:** Formulated strategic suggestions regarding cloud-native scaling and unified metadata layers. | **Prompt:** "Write in academic writing format... 4. Recommendations... (≈200–300 words)" | [cite_start]Stodder (2017) / TDWI [cite: 377] | [cite_start]**AI Verification:** Manually reviewed AI output for academic tone; verified that recommendations matched the TDWI source. [cite: 63, 101] |
-| **2026-04-05** | **Finalizing Conclusion:** Summarized key takeaways regarding decentralization (Data Mesh) and forward-looking research directions. | **Prompt:** "Write conclusion... summarize key takeaways and insights... (≈150–200 words)" | Modern Data Engineering Architecture Report | [cite_start]Ensured the conclusion addressed lessons learned as per the rubric requirements. [cite: 97, 104] |
+| **2026-03-23** | **Task Distribution:** Met with teammate (Tan Zhiming) to finalize the topic. Divided responsibilities: Teammate (Intro/Background/Analysis) and Self (Distribution/Recommendations/Conclusion). | "Modern Data Engineering Architecture", "Task allocation for group project" | Assignment Instructions | Ensured both members understood the 10% weightage and the April 13 deadline. |
+| **2026-04-05** | **Drafting Recommendations:** Developed strategic suggestions focusing on cloud scalability, metadata management, and proactive governance. | **Prompt:** "write in academic writing format but not too complicate english. 4. Recommendations... choose 3 recommendation from this article... (Loshin, 2017)" | Stodder, D. (2017) / TDWI | **Verification:** Cross-checked against the "Analysis" section to ensure logical flow. Verified that the author was Stodder, not Loshin. |
+| **2026-04-05** | **Finalizing Conclusion:** Synthesized the main findings regarding the paradigm shift to cloud-native ELT and future trends like Data Mesh. | **Prompt:** "write conclusion... Summarize key takeaways and insights. End with a forward-looking statement... (≈150–200 words)" | Research Report Draft | **Verification:** Used the rubric to ensure a forward-looking statement was included to highlight future research. |
+| **2026-04-05** | **Final Review & Appendix:** Compiled the AI usage log and formatted the reference list according to APA 7th edition. | "APA 7th citation format", "AI documentation UTM template" | Stodder (2017), Kleppmann (2017), Reis & Housley (2022) | **Notes:** Teammate's sections (Executive Summary, Intro, Background, Analysis) are currently being finalized for integration. |
 
 ---
 
 ## 🛡️ AI Usage & Ethical Statement
-In accordance with the assignment guidelines, we utilized **Gemini (AI)** to assist in refining the professional tone of the recommendations, organizing the executive summary, and structuring this logbook. To ensure academic integrity, all AI-generated content was:
-1.  **Fact-Checked** against primary references such as Kleppmann (2017) and Reis & Housley (2022.
-2.  **Paraphrased** to ensure the technical report reflects our own analytical thinking.
-3.  **Audited** to confirm it meets the 3–5 page length requirement and specific UTM formatting.
+In compliance with UTM academic integrity standards, **Gemini (AI)** was utilized as a research assistant for:
+* **Drafting & Refinement:** Polishing the academic tone of the "Recommendations" and "Conclusion" sections.
+* **Summarization:** Condensing complex technological concepts into a concise 150-200 word summary for the conclusion.
+
+**Verification Steps:**
+1.  **Fact-Checking:** Every recommendation was manually verified against the source article by David Stodder (2017).
+2.  **Originality Check:** All AI-generated text was rephrased to ensure it represents our own analytical synthesis and passes Turnitin requirements.
+3.  **Accuracy:** Checked technical definitions (e.g., Data Mesh, ELT) against foundational texts by Reis & Housley (2022).
+
+## 🛠️ Tools Consulted
+* **GitHub:** Version control and logbook hosting.
+* **Gemini:** AI-assisted drafting and summarization.
+* **Mendeley/APA Guide:** Citation and reference management.
