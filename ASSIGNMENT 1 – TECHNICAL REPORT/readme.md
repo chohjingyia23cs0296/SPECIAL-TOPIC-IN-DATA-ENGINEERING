@@ -4,6 +4,7 @@
 **Course:** SECP3843 – Special Topic in Data Engineering  
 **Topic:** Modern Data Engineering Architecture  
 **Members:** Choh Jing Yi (A23CS0296)
+**Tan Zhi Ming (A23CS0189)
 
 ## 📋 Logbook / Process Record
 
