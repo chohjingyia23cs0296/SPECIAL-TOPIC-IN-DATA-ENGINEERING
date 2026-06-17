@@ -53,7 +53,8 @@ To push the model beyond its baseline performance and cure initial issues with o
 
 ## 💡 Reflection
 
-* **What I Gained:** Completing this tutorial provided me with a highly practical understanding of the deep learning workflow. I learned exactly why traditional ANNs fail at image classification due to spatial data loss, and how Convolutional Neural Networks solve this by scanning for 2D features. Furthermore, I mastered essential model optimization skills—such as applying Dropout and Data Augmentation—to successfully cure overfitting and stabilize the mathematical confidence of my predictions. 
+* **What I Gained:** Completing this tutorial provided me with a highly practical understanding of the deep learning workflow. I learned exactly why traditional ANNs fail at image classification due to spatial data loss, and how Convolutional Neural Networks solve this by scanning for 2D features. Furthermore, I mastered essential model optimization skills—such as applying Dropout and Data Augmentation—to successfully cure overfitting and stabilize the mathematical confidence of my predictions.
+* 
 * **Suggested Improvements & Problem-Solving:** Working with the CIFAR-10 dataset was great for learning, as the academic dataset is already perfectly neat, standardized, and organized. However, in the real world, image data is messy and unstructured. A major improvement to this pipeline would be integrating robust data engineering tools to automatically collect, clean, and standardize raw images before they are fed to the AI. Finally, an excellent next step would be taking this optimized computer vision model and deploying it to an edge computing platform.
 
 ---
