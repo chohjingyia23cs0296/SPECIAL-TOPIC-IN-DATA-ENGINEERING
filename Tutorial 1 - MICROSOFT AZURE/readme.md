@@ -38,12 +38,12 @@ To process the data efficiently and maintain a clean organizational structure, t
 
 
 ### 🏗️ Data Pipeline Architecture
-![Azure Pipeline Architecture](https://raw.githubusercontent.com/chohjingyia23cs0296/SPECIAL-TOPIC-IN-DATA-ENGINEERING/main/Tutorial%201%20-%20MICROSOFT%20AZURE/azure_data_pipeline.png)
+![Azure Pipeline Architecture](https://raw.githubusercontent.com/chohjingyia23cs0296/SPECIAL-TOPIC-IN-DATA-ENGINEERING/main/Tutorial%201%20-%20MICROSOFT%20AZURE/images/azure_data_pipeline.png)
 
 The architecture follows a standard ETL workflow. Data is ingested dynamically using a `ForEach` activity in ADF, stored as raw Parquet files, transformed via Databricks notebooks triggered by ADF, and finally imported into Power BI via Synapse Serverless endpoints.
 
 ### 📊 MS Power BI Dashboard
-![Power BI Dashboard](https://raw.githubusercontent.com/chohjingyia23cs0296/SPECIAL-TOPIC-IN-DATA-ENGINEERING/main/Tutorial%201%20-%20MICROSOFT%20AZURE/Power%20BI%20Dashboard.png)
+![Power BI Dashboard](https://raw.githubusercontent.com/chohjingyia23cs0296/SPECIAL-TOPIC-IN-DATA-ENGINEERING/main/Tutorial%201%20-%20MICROSOFT%20AZURE/images/Power%20BI%20Dashboard.png)
 
 The interactive dashboard highlights key business indicators, tracking 296 products and over 7.08M in total sales.
 
