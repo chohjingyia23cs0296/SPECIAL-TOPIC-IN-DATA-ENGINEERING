@@ -17,8 +17,7 @@ Traditional data processing tools (like Pandas) struggle to handle gigabytes of 
 
 ## 🏗️ Pipeline Architecture
 
-![ETL Architecture](images/architecture.png)
-*(Note: Upload an architecture diagram or workflow chart here showing Extract -> Transform -> Load)*
+![ETL Architecture](images/etl_azure_architecture.png)
 
 ### 1. Extract (E)
 * Programmatically downloaded massive `.zip` files containing raw `.csv` microdata from the Brazilian Open Data Portal using the Python `requests` library.
@@ -29,28 +28,24 @@ Traditional data processing tools (like Pandas) struggle to handle gigabytes of 
 * **Optimization:** Bypassed Spark's expensive `inferSchema` operation by explicitly casting data types, reducing initial load times drastically.
 * **Data Compression:** Converted the heavy, raw CSV files into the **Apache Parquet** format. This columnar storage format reduced the data footprint from **~2.46 GB down to just ~322 MB**, vastly improving query speed.
 
-![Parquet Compression](images/parquet_files.png)
-*(Note: Upload a screenshot of your Parquet file directory here showing the _SUCCESS file and compressed parts)*
+![Parquet Compression](images/parquet_file.png)
 
 ### 3. Load (L)
 * **Data Modeling:** Transformed the flat denormalized data into a relational **Star Schema**.
   * **Dimension Tables (12):** Isolated descriptive attributes (e.g., `dim_location`, `dim_internet`, `dim_water`) to remove redundancies and generate unique surrogate keys.
   * **Fact Table (1):** Built a central `fact_censo_escolar` table holding quantitative metrics (enrollment numbers, teacher counts) mapped to the dimension keys.
 
-![Star Schema Diagram](images/schema.png)
-*(Note: Upload your Star Schema/Snowflake Schema diagram here)*
+![Star Schema Diagram](images/star_schema_apache_spark.png)
 
 * **Database Injection:** Established a JDBC connection to push the transformed DataFrames directly into a local PostgreSQL instance.
 
-![pgAdmin Database](images/pgadmin.png)
-*(Note: Upload your pgAdmin or DBeaver screenshot showing the successfully loaded tables and a sample SQL query)*
+![pgAdmin Database](images/pgAdmin.png)
 
 ### 4. Visualize (BI)
 * Connected **Power BI Desktop** directly to the PostgreSQL warehouse.
 * Built interactive dashboards utilizing cross-filtering to analyze enrollment trends, urban vs. rural school distribution, and internet accessibility across different Brazilian states and municipalities.
 
-![Power BI Dashboard](images/powerbi.png)
-*(Note: Upload a screenshot of your final Power BI dashboard here)*
+![Power BI Dashboard](images/ETL_BI_dashboard.png)
 
 ---
 
