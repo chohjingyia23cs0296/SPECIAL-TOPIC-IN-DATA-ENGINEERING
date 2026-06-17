@@ -1,37 +1,61 @@
-# Apache Spark ETL Pipeline: Brazilian Education Census
+# 🚀 End-to-End Data Engineering ETL Pipeline: Apache Spark & PostgreSQL
 
-An end-to-end local Data Engineering pipeline that extracts massive public datasets, transforms the data into a relational Star Schema using Apache Spark, and loads it into a PostgreSQL data warehouse for analytics.
+An automated, large-scale ETL (Extract, Transform, Load) pipeline built to process over 2.2 GB of Brazilian School Census (Censo Escolar) microdata. This project demonstrates distributed data processing using **Apache Spark**, relational data modeling using **PostgreSQL**, and business intelligence visualization using **Power BI**.
 
 ## 📌 Project Overview
-This project processes the microdata from the Brazilian National Basic Education Census (INEP). The raw data consists of millions of rows in a flat CSV format. This pipeline automates the downloading, data cleaning, and architectural restructuring required to make this data usable for Business Intelligence (BI) tools.
+Traditional data processing tools (like Pandas) struggle to handle gigabytes of raw educational records. This project leverages the distributed, in-memory processing power of Apache Spark to clean, reshape, and compress millions of rows of data, ultimately structuring it into a highly efficient **Star Schema** for fast analytical querying.
 
-### Tech Stack
+### 🛠️ Tech Stack
 * **Processing Engine:** Apache Spark (PySpark)
-* **Data Warehouse:** PostgreSQL
+* **Data Warehouse:** PostgreSQL (Containerized via Docker)
 * **Language:** Python 3.11
-* **Environment:** Jupyter Notebook / Anaconda
+* **Visualization:** Power BI
+* **Database Management:** DBeaver / Adminer / pgAdmin
+* **Environment:** Jupyter Notebook on Windows 11
 
-## 🏗️ Architecture & Pipeline Steps
+---
+
+## 🏗️ Pipeline Architecture
+
+![ETL Architecture](images/architecture.png)
+*(Note: Upload an architecture diagram or workflow chart here showing Extract -> Transform -> Load)*
 
 ### 1. Extract (E)
-* Utilizes the `requests` library to programmatically fetch the latest `.zip` microdata directly from the Brazilian Open Data Portal.
-* Bypasses strict SSL configurations and automatically unzips the payload into a local `raw_data` directory.
+* Programmatically downloaded massive `.zip` files containing raw `.csv` microdata from the Brazilian Open Data Portal using the Python `requests` library.
+* Automated the extraction and bypassed strict SSL configurations to securely land the raw data in a local directory.
 
 ### 2. Transform (T)
-* **Ingestion:** Loads the multi-gigabyte CSV into a Spark DataFrame, explicitly handling Brazilian regional encoding (`iso-8859-1`) and custom delimiters.
-* **Data Modeling:** Slices the denormalized flat file into a highly efficient **Star Schema**:
-  * `dim_location`: Isolates region, state, and municipality data, removing duplicates and generating unique surrogate keys (`location_id`).
-  * `dim_school`: Extracts descriptive school attributes (name, administrative dependency) and assigns unique `school_id` keys.
-  * `fact_school`: The central fact table containing quantifiable metrics (e.g., total basic enrollments, internet access flags) mapped back to the dimension keys.
+* **Data Ingestion:** Loaded the multi-gigabyte CSV into a Spark DataFrame, explicitly handling the Brazilian regional text encoding (`iso-8859-1`) and custom semicolon (`;`) delimiters.
+* **Optimization:** Bypassed Spark's expensive `inferSchema` operation by explicitly casting data types, reducing initial load times drastically.
+* **Data Compression:** Converted the heavy, raw CSV files into the **Apache Parquet** format. This columnar storage format reduced the data footprint from **~2.46 GB down to just ~322 MB**, vastly improving query speed.
+
+![Parquet Compression](images/parquet_files.png)
+*(Note: Upload a screenshot of your Parquet file directory here showing the _SUCCESS file and compressed parts)*
 
 ### 3. Load (L)
-* Establishes a JDBC connection via Spark to a local PostgreSQL instance.
-* Overwrites and pushes the fully transformed Star Schema (`dim_location`, `dim_school`, `fact_school`) into the public schema, ready for downstream SQL querying and dashboarding.
+* **Data Modeling:** Transformed the flat denormalized data into a relational **Star Schema**.
+  * **Dimension Tables (12):** Isolated descriptive attributes (e.g., `dim_location`, `dim_internet`, `dim_water`) to remove redundancies and generate unique surrogate keys.
+  * **Fact Table (1):** Built a central `fact_censo_escolar` table holding quantitative metrics (enrollment numbers, teacher counts) mapped to the dimension keys.
 
-## 🚀 How to Run
+![Star Schema Diagram](images/schema.png)
+*(Note: Upload your Star Schema/Snowflake Schema diagram here)*
 
-1. **Prerequisites:** Ensure you have Apache Spark, Java (JVM), and PostgreSQL installed on your local machine.
-2. **Environment:** Clone this repository and install the required dependencies:
-   ```bash
-   pip install pyspark requests jupyter
+* **Database Injection:** Established a JDBC connection to push the transformed DataFrames directly into a local PostgreSQL instance.
 
+![pgAdmin Database](images/pgadmin.png)
+*(Note: Upload your pgAdmin or DBeaver screenshot showing the successfully loaded tables and a sample SQL query)*
+
+### 4. Visualize (BI)
+* Connected **Power BI Desktop** directly to the PostgreSQL warehouse.
+* Built interactive dashboards utilizing cross-filtering to analyze enrollment trends, urban vs. rural school distribution, and internet accessibility across different Brazilian states and municipalities.
+
+![Power BI Dashboard](images/powerbi.png)
+*(Note: Upload a screenshot of your final Power BI dashboard here)*
+
+---
+
+## 💡 Reflection
+
+* **What I Gained:** Building this project provided me with hands-on experience in constructing a scalable, end-to-end data pipeline from scratch. I gained a deep understanding of how to leverage Apache Spark for large-scale data processing instead of relying on memory-limited tools like Pandas. Specifically, I learned how to programmatically extract raw CSV data, optimize storage and query performance by converting it into the columnar Parquet format, and design a relational Star Schema (comprising Fact and Dimension tables). Finally, I developed practical skills in integrating big data frameworks with traditional databases by successfully loading the transformed data into PostgreSQL using Spark JDBC connectors.
+
+* **Suggested Improvements & Problem-Solving:** A significant portion of my learning came from troubleshooting environment-specific challenges while running PySpark natively on Windows. I successfully solved complex configuration issues, such as fixing "Python worker crashed" errors by strictly aligning the `PYSPARK_PYTHON` environment variables, bypassing SSL verification for government data extraction, and correcting JDBC driver URI pathing. To improve this pipeline in the future, I suggest migrating the workload from a local machine to a cloud-based distributed cluster (such as Azure Databricks) to fully utilize Spark's parallel processing power. Additionally, integrating an orchestration tool like Apache Airflow would be a great next step to fully automate the extraction and transformation schedules.
