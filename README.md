@@ -36,6 +36,17 @@ This repository contains a comprehensive collection of data engineering pipeline
 - **Key Themes:** The paradigm shift from ETL to ELT, the rise of Data Lakehouses (decoupling compute from storage), and the adoption of decentralized ownership models like Data Mesh.
 - **Highlights:** Provided strategic recommendations for enterprises to build resilient architectures using cloud scalability, unified metadata management, and AI-driven pipeline monitoring.
 
+### 6. Individual Project: Scalable Traffic Safety Analytics using Apache Spark
+- **Overview:** An end-to-end data engineering project that develops a scalable traffic accident analytics platform using Apache Spark and the Medallion Data Lakehouse Architecture. The project integrates multiple heterogeneous data sources, including the US Accidents dataset, the Nager.Date Public Holiday API, and U.S. Census population data, to support predictive analytics and interactive business intelligence.
+- **Tech Stack:** Apache Spark (PySpark), Delta Lake, Spark MLlib, Power BI, Python.
+- **Highlights:**
+  - Designed and implemented a complete Medallion Architecture consisting of Bronze, Silver, and Gold layers.
+  - Integrated CSV and JSON data sources into a unified analytical framework using PySpark.
+  - Performed large-scale data cleaning, transformation, feature engineering, and dimensional modelling.
+  - Developed a Star Schema with one fact table and two dimension tables to support efficient analytical queries.
+  - Integrated a Random Forest Classifier using Spark MLlib to predict traffic accident severity.
+  - Built an interactive Power BI dashboard for accident trend analysis, severity prediction, holiday impact analysis, and population-normalized traffic statistics.
+
 ---
 
 ## 💡 Key Learnings & Reflection
