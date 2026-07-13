@@ -51,6 +51,6 @@ This repository contains a comprehensive collection of data engineering pipeline
 
 ## 💡 Key Learnings & Reflection
 
-Building this repository provided me with practical, hands-on experience in constructing scalable, end-to-end data pipelines from scratch. 
+This course shows my learning journey from theory to practice in data engineering. Through the technical report, I learned core concepts like ELT, Lakehouse, cloud architecture, and why modern data systems need scalability and good governance. Through the tutorials, I gained hands-on skills in Azure, Apache Spark, ETL design, CNN models, and AI-assisted pipeline development. I also learned to solve real technical issues, not just follow steps. Through the individual project, I learned to build a full end-to-end solution: data integration, Medallion architecture, feature engineering, machine learning, and dashboard reporting. This experience helped me think more like a complete data engineer.
 
-A significant portion of my growth came from meticulous problem-solving and troubleshooting environment-specific challenges. I successfully resolved Python worker crashes in PySpark by aligning environment variables, corrected complex JDBC driver pathing issues, and navigated cloud security rules in Azure. These projects have given me a deep understanding of big data frameworks, relational data modeling, and the critical role of infrastructure and security in modern data engineering.
+
