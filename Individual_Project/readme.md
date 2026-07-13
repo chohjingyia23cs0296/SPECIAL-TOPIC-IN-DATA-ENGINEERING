@@ -131,32 +131,6 @@ Power BI Dashboard
 
 ---
 
-# Repository Structure
-
-```
-.
-├── data/
-│   ├── accidents.csv
-│   ├── holidays.json
-│   └── population.csv
-│
-├── notebooks/
-│   ├── Bronze Layer.ipynb
-│   ├── Silver Layer.ipynb
-│   ├── Gold Layer.ipynb
-│   └── Random Forest.ipynb
-│
-├── dashboard/
-│   └── PowerBI.pbix
-│
-├── report/
-│   └── Individual_Report.pdf
-│
-└── README.md
-```
-
----
-
 # Author
 
 **Jing Yi Choh**
