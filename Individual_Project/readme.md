@@ -71,11 +71,9 @@ Power BI Dashboard
 
 ## 💡 Key Learnings & Reflection
 
-Working on this project taught me a lot about data engineering in a practical way. At first, I thought data work was only about coding, but I learned that understanding the data flow is just as important. I practiced collecting, cleaning, and organizing data so it can be used correctly. I also learned how small mistakes in one step can affect the whole pipeline.
+Completing this project has given me a much better understanding of the complete data engineering workflow. Before starting, I mainly knew the theory behind Apache Spark and data pipelines. Through this project, I learned how to build an end-to-end pipeline, beginning with data ingestion, followed by data cleaning, feature engineering, data storage, machine learning, and dashboard visualization. I also became more familiar with the Medallion Data Lakehouse architecture and how different datasets can be integrated into a structured analytical model.
 
-Another thing I improved was problem solving. When errors happened, I had to read logs, check each process, and test again. This made me more patient and careful. I also became more confident using tools and writing clearer steps.
-
-Overall, this project helped me connect theory with real tasks. I now understand data engineering better and feel more ready for future projects and teamwork.
+One of the biggest challenges was debugging PySpark code and ensuring that data from different sources could be joined correctly. Solving these problems improved my analytical thinking and troubleshooting skills. This project also strengthened my technical writing and documentation skills. Overall, the experience has increased my confidence in applying data engineering concepts to real-world problems and has provided a solid foundation for future projects and professional work.
 
 ---
 
